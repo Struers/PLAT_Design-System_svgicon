@@ -3,7 +3,7 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-import svgicon from 'vue-svgicon'
+import svgicon from '@struers/svgicon'
 import '@/components/icons'
 
 Vue.use(svgicon, {

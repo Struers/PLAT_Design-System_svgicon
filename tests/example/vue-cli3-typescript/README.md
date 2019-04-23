@@ -6,14 +6,14 @@
 yarn install
 ```
 
-## link vue-svgicon
+## link @struers/svgicon
 
 ```bash
-# in vue-svgicon root
+# in @struers/svgicon root
 yarn link
 
 # in current example root
-yarn link vue-svgicon
+yarn link @struers/svgicon
 ```
 
 ### Compiles and hot-reloads for development

@@ -5,7 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "svg": "node node_modules/vue-svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
+        "svg": "node node_modules/@struers/svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
     },
     "dependencies": {
         "vue": "^2.5.17",

@@ -68,6 +68,12 @@ export default async function build(options: Options) {
                 // get view box
                 let viewBox = getViewBox(result)
 
+                // get Struers status
+                let status = getStruersStatus(result)
+
+                // get Struers version
+                let version = getStruersVersion(result)
+
                 // add pid attr, for css
                 data = addPid(data)
 
@@ -85,7 +91,9 @@ export default async function build(options: Options) {
                     width: parseFloat(result.info.width) || 16,
                     height: parseFloat(result.info.height) || 16,
                     viewBox: `'${viewBox}'`,
-                    data: data
+                    data,
+                    status,
+                    version
                 })
 
                 try {
@@ -234,6 +242,32 @@ function getViewBox(svgoResult: OptimizedSvg) {
     }
 
     return viewBox
+}
+
+/**
+ * get Struers version
+ **/
+function getStruersVersion(svgoResult: OptimizedSvg): string {
+    const match = svgoResult.data.match(
+        /(?<=struers:version=")(?:(\d+)\.){0,2}(\*|\d+)(?=")/
+    )
+    if (match && match.length > 0) {
+        return match[0]
+    }
+    return ''
+}
+
+/**
+ * get Struers status
+ **/
+function getStruersStatus(svgoResult: OptimizedSvg): string {
+    const match = svgoResult.data.match(
+        /(?<=struers:status=")[a-zA-Z]{1,}(?=")/
+    )
+    if (match && match.length > 0) {
+        return match[0]
+    }
+    return ''
 }
 
 // add pid attr, for css

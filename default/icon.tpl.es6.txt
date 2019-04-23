@@ -1,12 +1,14 @@
 /* eslint-disable */
 /* tslint:disable */
 // @ts-ignore
-import icon from 'vue-svgicon'
+import icon from '@struers/svgicon'
 icon.register({
   '${name}': {
     width: ${width},
     height: ${height},
     viewBox: ${viewBox},
+    version: '${version}',
+    status: '${status}',
     data: '${data}'
   }
 })

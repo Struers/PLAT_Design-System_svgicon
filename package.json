@@ -1,5 +1,5 @@
 {
-    "name": "vue-svgicon",
+    "name": "@struers/svgicon",
     "version": "3.2.6",
     "description": "A tool to create svg icon components. (vue 2.x)",
     "main": "./dist/components/svgicon.common.js",
@@ -22,7 +22,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MMF-FE/vue-svgicon.git"
+        "url": "git+https://github.com/Struers/svgicon.git"
     },
     "keywords": [
         "vue",
@@ -34,9 +34,9 @@
     "author": "allenice <994298628@qq.com> (http://blog.allenice233.com/)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/MMF-FE/vue-svgicon/issues"
+        "url": "https://github.com/Struers/svgicon/issues"
     },
-    "homepage": "https://github.com/MMF-FE/vue-svgicon#readme",
+    "homepage": "https://github.com/Struers/svgicon#readme",
     "files": [
         "dist/",
         "default/",

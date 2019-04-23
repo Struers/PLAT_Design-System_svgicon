@@ -1,10 +1,12 @@
 /* eslint-disable */
-var icon = require('vue-svgicon')
+var icon = require('@struers/svgicon')
 icon.register({
   '${name}': {
     width: ${width},
     height: ${height},
     viewBox: ${viewBox},
+    version: '${version}',
+    status: '${status}',
     data: '${data}'
   }
 })

@@ -1,6 +1,6 @@
 /* eslint-disable */
 //@ts-ignore
-import icon from 'vue-svgicon'
+import icon from '@struers/svgicon'
 icon.register({
     good: {
         width: 200,

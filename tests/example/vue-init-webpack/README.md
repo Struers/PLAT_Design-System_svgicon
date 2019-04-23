@@ -8,11 +8,11 @@
 # install dependencies
 npm install
 
-# in vue-svgicon root
+# in @struers/svgicon root
 yarn link
 
 # in current example root
-yarn link vue-svgicon
+yarn link @struers/svgicon
 
 # serve with hot reload at localhost:8080
 npm run dev

@@ -1,10 +1,6 @@
-# vue-svgicon
+# @struers/svgicon
 
-[![Build Status](https://img.shields.io/travis/MMF-FE/vue-svgicon.svg?style=flat-square)](https://travis-ci.org/MMF-FE/vue-svgicon)
-
-A tool to create svg icon components. (vue 2.x) [中文](./README-CN.md)
-
-> Try next version: [4.x](https://github.com/MMF-FE/vue-svgicon/tree/dev)
+A tool to create svg icon components. (vue 2.x)
 
 ## Inspiration
 
@@ -26,9 +22,9 @@ https://mmf-fe.github.io/vue-svgicon/v3/
 
 ```bash
 # install global
-npm install vue-svgicon -g
+npm install @struers/svgicon -g
 # install for project
-npm install vue-svgicon --save-dev
+npm install @struers/svgicon --save-dev
 ```
 
 #### Command
@@ -58,7 +54,7 @@ It will generate icons to the specified path.
 #### Use programming api
 
 ```js
-import build from 'vue-svgicon/dist/lib/build'
+import build from '@struers/svgicon/dist/lib/build'
 build({
     sourcePath: '';
     targetPath: '';
@@ -80,7 +76,7 @@ vsvg -s /path/to/svg/source -t /path/for/generated/components --tpl /path/for/ic
 Default template is:
 
 ```javascript
-var icon = require('vue-svgicon')
+var icon = require('@struers/svgicon')
 icon.register({
   '${name}': {
     width: ${width},
@@ -109,14 +105,14 @@ vsvg -s /path/to/svg/source -t /path/for/generated/components --ext ts --es6
 vsvg -s /path/to/svg/source -t /path/for/generated/components --svgo svgo.js
 ```
 
-[Default svgo config](https://github.com/MMF-FE/vue-svgicon/blob/master/default/svgo.js)
+[Default svgo config](https://github.com/Struers/svgicon/blob/master/default/svgo.js)
 
 ### Use generated icon
 
-First of all, your should write some css code for `vue-svgicon` in global scope. Recommended code is below:
+First of all, your should write some css code for `@struers/svgicon` in global scope. Recommended code is below:
 
 ```css
-/* recommended css code for vue-svgicon */
+/* recommended css code for @struers/svgicon */
 .svg-icon {
     display: inline-block;
     width: 16px;
@@ -158,7 +154,7 @@ Use plugin
 // main.js
 import Vue from 'vue'
 import App from './App.vue'
-import SvgIcon from 'vue-svgicon'
+import SvgIcon from '@struers/svgicon'
 
 // Default tag name is 'svgicon'
 Vue.use(SvgIcon, {
@@ -462,7 +458,7 @@ This component doesn't work on IE because IE don't support `innerHTML` in SVGEle
 
 ```js
 // in main.js first line
-import 'vue-svgicon/dist/polyfill'
+import '@struers/svgicon/dist/polyfill'
 ```
 
 This polyfill is a wrapper of [innersvg-polyfill](https://github.com/dnozay/innersvg-polyfill).

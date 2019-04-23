@@ -17,7 +17,7 @@ let webpackConfig = {
             'vue/dist/vue.runtime.esm.js',
             'vue-router',
             'vuex',
-            'vue-svgicon',
+            '@struers/svgicon',
             'vue-property-decorator',
             'vue-class-component',
             'vuex-class'

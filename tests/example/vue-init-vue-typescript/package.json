@@ -9,16 +9,11 @@
         "dev": "cross-env ENV=dev webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
         "build": "node build/build.js",
         "dll": "webpack --config ./build/webpack.dll.conf.js",
-        "svg": "node node_modules/vue-svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons --ext ts --es6",
+        "svg": "node node_modules/@struers/svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons --ext ts --es6",
         "cli": "ts-node --project ./tools/tsconfig.json ./tools/cli.ts",
         "format": "yarn format:js && yarn format:scss",
         "format:js": "find . -path ./node_modules -prune -o -name '*.js' -o -name '*.ts' -o -name '*.json' | xargs prettier --write",
         "format:scss": "find src -name '*.scss' | xargs prettier-stylelint --write -q"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
     },
     "lint-staged": {
         "concurrent": false,

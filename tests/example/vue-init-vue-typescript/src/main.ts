@@ -3,7 +3,7 @@ import Vue from 'vue'
 // register plugins hooks fo vue component
 import 'common/registerHooks'
 
-import svgicon from 'vue-svgicon'
+import svgicon from '@struers/svgicon'
 console.log(svgicon)
 // import all icons
 import 'components/icons'

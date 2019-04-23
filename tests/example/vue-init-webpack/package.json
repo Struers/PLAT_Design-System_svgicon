@@ -8,7 +8,7 @@
         "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
         "start": "npm run dev",
         "build": "node build/build.js",
-        "svg": "node node_modules/vue-svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
+        "svg": "node node_modules/@struers/svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
     },
     "dependencies": {
         "vue": "^2.5.2"
