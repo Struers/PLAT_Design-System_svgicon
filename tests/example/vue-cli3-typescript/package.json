@@ -8,6 +8,7 @@
         "svg": "node node_modules/@struers/svgicon/dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
     },
     "dependencies": {
+        "@struers/svgicon": "^3.2.6",
         "vue": "^2.5.17",
         "vue-class-component": "^6.0.0",
         "vue-property-decorator": "^7.0.0"
