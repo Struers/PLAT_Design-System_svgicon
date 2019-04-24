@@ -30,7 +30,7 @@ function build(options) {
                         }
                         files = files.map(function (f) { return path.normalize(f); });
                         files.forEach(function (filename, ix) { return tslib_1.__awaiter(_this, void 0, void 0, function () {
-                            var name, svgContent, filePath, result, data, viewBox, content;
+                            var name, svgContent, filePath, result, data, viewBox, status, version, content;
                             return tslib_1.__generator(this, function (_a) {
                                 switch (_a.label) {
                                     case 0:
@@ -44,6 +44,8 @@ function build(options) {
                                             .replace(/<svg[^>]+>/gi, '')
                                             .replace(/<\/svg>/gi, '');
                                         viewBox = getViewBox(result);
+                                        status = getStruersStatus(result);
+                                        version = getStruersVersion(result);
                                         // add pid attr, for css
                                         data = addPid(data);
                                         // rename fill and stroke. (It can restroe in vue-svgicon)
@@ -57,7 +59,9 @@ function build(options) {
                                             width: parseFloat(result.info.width) || 16,
                                             height: parseFloat(result.info.height) || 16,
                                             viewBox: "'" + viewBox + "'",
-                                            data: data
+                                            data: data,
+                                            status: status,
+                                            version: version
                                         });
                                         try {
                                             fs.writeFileSync(path.join(options.targetPath, filePath, name + ("." + options.ext)), content, 'utf-8');
@@ -184,6 +188,28 @@ function getViewBox(svgoResult) {
         viewBox = "0 0 " + svgoResult.info.width + " " + svgoResult.info.height;
     }
     return viewBox;
+}
+/**
+ * get Struers version
+ **/
+function getStruersVersion(svgoResult) {
+    var match = svgoResult.data.match(/(?<=struers:version=")(?:(\d+)\.){0,2}(\*|\d+)(?=")/);
+    console.log(colors.grey("getStruersVersion"), match);
+    if (match && match.length > 0) {
+        return match[0];
+    }
+    return '';
+}
+/**
+ * get Struers status
+ **/
+function getStruersStatus(svgoResult) {
+    var match = svgoResult.data.match(/(?<=struers:status=")[a-zA-Z]{1,}(?=")/);
+    console.log(colors.grey("getStruersStatus"), match);
+    if (match && match.length > 0) {
+        return match[0];
+    }
+    return '';
 }
 // add pid attr, for css
 function addPid(content) {

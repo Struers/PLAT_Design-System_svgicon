@@ -251,6 +251,7 @@ function getStruersVersion(svgoResult: OptimizedSvg): string {
     const match = svgoResult.data.match(
         /(?<=struers:version=")(?:(\d+)\.){0,2}(\*|\d+)(?=")/
     )
+    console.log(colors.grey(`getStruersVersion`), match)
     if (match && match.length > 0) {
         return match[0]
     }
@@ -264,6 +265,7 @@ function getStruersStatus(svgoResult: OptimizedSvg): string {
     const match = svgoResult.data.match(
         /(?<=struers:status=")[a-zA-Z]{1,}(?=")/
     )
+    console.log(colors.grey(`getStruersStatus`), match)
     if (match && match.length > 0) {
         return match[0]
     }
