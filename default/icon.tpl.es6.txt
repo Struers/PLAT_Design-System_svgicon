@@ -9,6 +9,8 @@ icon.register({
     viewBox: ${viewBox},
     version: '${version}',
     status: '${status}',
+    category: '${category}',
+    soucre: '${soucre}',
     data: '${data}'
   }
 })

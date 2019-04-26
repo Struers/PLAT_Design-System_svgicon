@@ -74,6 +74,12 @@ export default async function build(options: Options) {
                 // get Struers version
                 let version = getStruersVersion(result)
 
+                // get Struers category
+                let category = getStruersCategory(result)
+
+                // get Struers souce
+                let source = getStruersSource(result)
+
                 // add pid attr, for css
                 data = addPid(data)
 
@@ -93,7 +99,9 @@ export default async function build(options: Options) {
                     viewBox: `'${viewBox}'`,
                     data,
                     status,
-                    version
+                    version,
+                    category,
+                    source
                 })
 
                 try {
@@ -245,13 +253,10 @@ function getViewBox(svgoResult: OptimizedSvg) {
 }
 
 /**
- * get Struers version
+ * get attribute
  **/
-function getStruersVersion(svgoResult: OptimizedSvg): string {
-    const match = svgoResult.data.match(
-        /(?<=struers:version=")(?:(\d+)\.){0,2}(\*|\d+)(?=")/
-    )
-    console.log(colors.grey(`getStruersVersion`), match)
+function getAttr(svgoResult: OptimizedSvg, rx: any): string {
+    const match = svgoResult.data.match(rx)
     if (match && match.length > 0) {
         return match[0]
     }
@@ -259,17 +264,34 @@ function getStruersVersion(svgoResult: OptimizedSvg): string {
 }
 
 /**
+ * get Struers category
+ **/
+function getStruersSource(svgoResult: OptimizedSvg): string {
+    return getAttr(svgoResult, /(?<=struers:source=")[a-zA-Z\-]{1,}(?=")/)
+}
+
+/**
+ * get Struers category
+ **/
+function getStruersCategory(svgoResult: OptimizedSvg): string {
+    return getAttr(svgoResult, /(?<=struers:category=")[a-zA-Z\-]{1,}(?=")/)
+}
+
+/**
+ * get Struers version
+ **/
+function getStruersVersion(svgoResult: OptimizedSvg): string {
+    return getAttr(
+        svgoResult,
+        /(?<=struers:version=")(?:(\d+)\.){0,2}(\*|\d+)(?=")/
+    )
+}
+
+/**
  * get Struers status
  **/
 function getStruersStatus(svgoResult: OptimizedSvg): string {
-    const match = svgoResult.data.match(
-        /(?<=struers:status=")[a-zA-Z]{1,}(?=")/
-    )
-    console.log(colors.grey(`getStruersStatus`), match)
-    if (match && match.length > 0) {
-        return match[0]
-    }
-    return ''
+    return getAttr(svgoResult, /(?<=struers:status=")[a-zA-Z\-]{1,}(?=")/)
 }
 
 // add pid attr, for css
