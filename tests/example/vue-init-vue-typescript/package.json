@@ -24,7 +24,6 @@
         }
     },
     "dependencies": {
-        "@struers/svgicon": "^3.2.6",
         "axios": "^0.18.0",
         "lodash": "^4.17.4",
         "normalize.css": "^8.0.0",
