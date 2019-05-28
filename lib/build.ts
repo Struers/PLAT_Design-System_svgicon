@@ -4,6 +4,7 @@ import * as colors from 'colors'
 import * as glob from 'glob'
 import * as Svgo from 'svgo'
 import camelCase from 'camelcase'
+import rimraf = require('rimraf')
 
 interface OptimizedSvg {
     data: string
@@ -31,7 +32,8 @@ export interface Options {
 export default async function build(options: Options) {
     return new Promise((resolve, reject) => {
         // delete previous icons
-        fs.removeSync(options.targetPath)
+        rimraf.sync(options.targetPath)
+        //fs.removeSync(options.targetPath)
 
         // the template file which to generate icon files
         const tplPath = options.tpl
