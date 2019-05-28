@@ -32,7 +32,7 @@ export interface Options {
 export default async function build(options: Options) {
     return new Promise((resolve, reject) => {
         // delete previous icons
-        rimraf.sync(options.targetPath)
+        rimraf.sync(path.join(options.targetPath, '/*'))
         //fs.removeSync(options.targetPath)
 
         // the template file which to generate icon files

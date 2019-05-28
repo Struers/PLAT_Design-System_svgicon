@@ -7,6 +7,7 @@ var colors = require("colors");
 var glob = require("glob");
 var Svgo = require("svgo");
 var camelcase_1 = require("camelcase");
+var rimraf = require("rimraf");
 /**
  * build svg icon
  */
@@ -15,7 +16,8 @@ function build(options) {
         return tslib_1.__generator(this, function (_a) {
             return [2 /*return*/, new Promise(function (resolve, reject) {
                     // delete previous icons
-                    fs.removeSync(options.targetPath);
+                    rimraf.sync(path.join(options.targetPath, '/*'));
+                    //fs.removeSync(options.targetPath)
                     // the template file which to generate icon files
                     var tplPath = options.tpl
                         ? path.join(process.cwd(), options.tpl)
