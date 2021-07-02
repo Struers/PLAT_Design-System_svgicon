@@ -1,6 +1,6 @@
 {
     "name": "@struers/svgicon",
-    "version": "3.2.11",
+    "version": "3.2.12",
     "description": "A tool to create svg icon components. (vue 2.x)",
     "main": "./dist/components/svgicon.common.js",
     "typings": "typings/index.d.ts",
@@ -20,9 +20,13 @@
         "svg:ts": "node ./dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons --ext ts --es6",
         "debug": "node --nolazy --inspect-brk=5858 ./dist/lib/index.js -s ./src/assets/svg -t ./src/components/icons"
     },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/",
+        "access": "restricted"
+    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Struers/svgicon.git"
+        "url": "git://github.com/Struers/svgicon.git"
     },
     "keywords": [
         "vue",
@@ -74,7 +78,7 @@
         "chai": "^4.1.2",
         "highlight.js": "^9.12.0",
         "lint-staged": "^6.0.0",
-        "node-sass": "^4.9.0",
+        "node-sass": "^4.14.1",
         "prettier": "^1.13.7",
         "prettier-stylelint": "^0.4.2",
         "sass-loader": "^7.0.1",
