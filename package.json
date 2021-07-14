@@ -26,7 +26,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/Struers/svgicon.git"
+        "url": "git://github.com/Struers/PLAT_Design-System_svgicon.git"
     },
     "keywords": [
         "vue",
@@ -38,9 +38,9 @@
     "author": "allenice <994298628@qq.com> (http://blog.allenice233.com/)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Struers/svgicon/issues"
+        "url": "https://github.com/Struers/PLAT_Design-System_svgicon/issues"
     },
-    "homepage": "https://github.com/Struers/svgicon#readme",
+    "homepage": "https://github.com/Struers/PLAT_Design-System_svgicon#readme",
     "files": [
         "dist/",
         "default/",
